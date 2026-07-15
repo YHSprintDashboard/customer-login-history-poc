@@ -1,6 +1,13 @@
 import streamlit as st
 
-st.set_page_config(page_title="Login History", layout="wide")
+st.set_page_config(
+    page_title="Customer Login History",
+    layout="wide"
+)
+
+# ------------------------
+# DATA
+# ------------------------
 
 events = [
     {
@@ -28,41 +35,105 @@ events = [
 
 latest = events[0]
 
-st.markdown("### Earlier this month   July 2026")
+# ------------------------
+# SESSION STATE
+# ------------------------
 
-with st.expander("Your Login History"):
+if "expanded" not in st.session_state:
+    st.session_state.expanded = False
+
+
+def toggle():
+    st.session_state.expanded = not st.session_state.expanded
+
+
+# ------------------------
+# HEADER
+# ------------------------
+
+st.markdown(
+    """
+    <div style="
+        font-size:18px;
+        font-weight:600;
+        color:#1f355e;
+        margin-bottom:20px;">
+        Earlier this month
+        <span style="color:#5d6d8f;font-weight:400;">
+            &nbsp;&nbsp;July 2026
+        </span>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+# ------------------------
+# CARD
+# ------------------------
+
+col1, col2 = st.columns([1, 12])
+
+with col1:
+    st.markdown(
+        """
+        <div style="
+            width:65px;
+            height:65px;
+            border-radius:50%;
+            border:2px solid #d7deeb;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:30px;">
+            🛡️
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+with col2:
 
     st.markdown(
         f"""
-        <div style="color:red;font-weight:bold;font-size:18px;">
-        {latest['title']}
-        </div>
-        <div>{latest['date']}</div>
-        """,
-        unsafe_allow_html=True,
-    )
+        <div style="
+            border:2px solid #d7deeb;
+            border-radius:20px;
+            padding:30px;
+            background:white;">
 
-    st.markdown("---")
-    st.markdown("### EVENTS")
+            <div style="
+                display:flex;
+                justify-content:space-between;
+                align-items:center;">
 
-    for event in events:
+                <div style="
+                    font-size:22px;
+                    font-weight:700;
+                    color:#1f355e;">
+                    Your Login History
+                </div>
 
-        color = "#d32f2f" if event["status"] == "error" else "#2e7d32"
+                <div style="
+                    color:#7081a3;
+                    font-size:18px;">
+                    {latest['date']}
+                </div>
 
-        st.markdown(
-            f"""
-            <div style="color:{color};font-weight:bold;">
-            {event['title']}
             </div>
-            <div>{event['date']}</div>
-            """,
-            unsafe_allow_html=True,
-        )
 
-        if "next_steps" in event:
-            st.markdown("#### Next Steps")
+            <div style="margin-top:25px;">
 
-            for step in event["next_steps"]:
-                st.markdown(f"- {step}")
+                <span style="
+                    background:#fdecec;
+                    color:#d62828;
+                    padding:10px 16px;
+                    border-radius:25px;
+                    font-weight:600;">
+                    {latest['title']}
+                </span>
 
-        st.markdown("---")
+            </div>
+
+        </div>
+        """,
+        unsafe_allow_html=True
