@@ -71,69 +71,87 @@ st.markdown(
 # CARD
 # ------------------------
 
-col1, col2 = st.columns([1, 12])
+outer_left, outer_middle, outer_right = st.columns([1, 8, 3])
 
-with col1:
-    st.markdown(
-        """
-        <div style="
-            width:65px;
-            height:65px;
-            border-radius:50%;
-            border:2px solid #d7deeb;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            font-size:30px;">
-            🛡️
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+with outer_left:
 
-with col2:
+    st.markdown("# 🛡️")
+
+    if st.session_state.expanded:
+        st.markdown(
+            """
+            <div style="
+                margin-left:25px;
+                width:2px;
+                height:600px;
+                background:#d0d7e5;">
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+with outer_middle:
 
     with st.container(border=True):
 
-        col_title, col_date = st.columns([4, 1])
+        title_col, date_col, arrow_col = st.columns([5, 1, 1])
 
-        with col_title:
+        with title_col:
             st.subheader("Your Login History")
 
-        with col_date:
+        with date_col:
             st.write("")
             st.write(latest["date"])
+
+        with arrow_col:
+            st.write("")
+
+            arrow = "⌃" if st.session_state.expanded else "⌄"
+
+            if st.button(arrow, key="toggle"):
+                st.session_state.expanded = not st.session_state.expanded
+                st.rerun()
 
         st.error(latest["title"])
 
 
-if st.button(
-    "▼ Expand Login History"
-    if not st.session_state.expanded
-    else "▲ Collapse Login History",
-    use_container_width=True,
-):
-    st.session_state.expanded = not st.session_state.expanded
-
+# ------------------------
+# EXPANDED CONTENT
+# ------------------------
 
 if st.session_state.expanded:
 
-    st.markdown("## Events")
+    st.markdown("### EVENTS")
 
     for event in events:
 
-        if event["status"] == "error":
-            st.error(event["title"])
-        else:
-            st.success(event["title"])
+        event_col1, event_col2 = st.columns([1, 12])
 
-        st.caption(event["date"])
+        with event_col1:
 
-        if "next_steps" in event:
+            if event["status"] == "error":
+                st.markdown("### 🔴")
+            else:
+                st.markdown("### ✅")
 
-            st.markdown("### Next Steps")
+        with event_col2:
 
-            for step in event["next_steps"]:
-                st.markdown(f"- {step}")
+            if event["status"] == "error":
+                st.markdown(
+                    f"**🔴 {event['title']}**"
+                )
+            else:
+                st.markdown(
+                    f"**✅ {event['title']}**"
+                )
+
+            st.caption(event["date"])
+
+            if "next_steps" in event:
+
+                st.markdown("#### Next Steps")
+
+                for step in event["next_steps"]:
+                    st.markdown(f"- {step}")
 
         st.divider()
