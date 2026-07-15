@@ -113,7 +113,7 @@ with outer_middle:
 
 if st.session_state.expanded:
 
-    st.markdown("### EVENTS")
+    
 
     for event in events:
 
