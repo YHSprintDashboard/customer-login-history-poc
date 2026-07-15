@@ -78,17 +78,9 @@ with outer_left:
     st.markdown("# 🛡️")
 
     if st.session_state.expanded:
-        st.markdown(
-            """
-            <div style="
-                margin-left:25px;
-                width:2px;
-                height:600px;
-                background:#d0d7e5;">
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
+
+        st.markdown("---")
+        st.markdown("### EVENTS")
 
 with outer_middle:
 
@@ -137,13 +129,9 @@ if st.session_state.expanded:
         with event_col2:
 
             if event["status"] == "error":
-                st.markdown(
-                    f"**🔴 {event['title']}**"
-                )
+                st.error(event["title"])
             else:
-                st.markdown(
-                    f"**✅ {event['title']}**"
-                )
+                st.success(event["title"])
 
             st.caption(event["date"])
 
