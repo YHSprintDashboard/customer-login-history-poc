@@ -49,7 +49,7 @@ if "expanded" not in st.session_state:
 st.markdown("### Earlier this month   July 2026")
 
 # ------------------------
-# CARD
+# LAYOUT
 # ------------------------
 
 outer_left, outer_middle, outer_right = st.columns([1, 8, 3])
@@ -59,8 +59,10 @@ with outer_left:
 
 with outer_middle:
 
+    # ONE SINGLE CONTAINER
     with st.container(border=True):
 
+        # Header row
         title_col, date_col, arrow_col = st.columns([6, 2, 1])
 
         with title_col:
@@ -79,73 +81,53 @@ with outer_middle:
                 st.session_state.expanded = not st.session_state.expanded
                 st.rerun()
 
+        # Top summary
         st.error(latest["title"])
 
-# ------------------------
-# EXPANDED CONTENT
-# ------------------------
+        # ------------------------
+        # EXPANDED CONTENT INSIDE CARD
+        # ------------------------
 
-if st.session_state.expanded:
+        if st.session_state.expanded:
 
-    with outer_middle:
+            st.divider()
 
-        st.markdown("### EVENTS")
+            st.markdown("#### EVENTS")
 
-        for event in events:
+            for idx, event in enumerate(events):
 
-            icon_col, content_col = st.columns([1, 7])
-    
-            with icon_col:
-    
-                if event["status"] == "error":
-                    st.markdown("### ❌")
-                else:
-                    st.markdown("### ✅")
-    
-            with content_col:
+                icon_col, content_col = st.columns([1, 12])
 
-                if event["status"] == "error":
-            
-                    st.markdown(
-                        f"""
-                        <div style="background:#FCE8E8;
-                                    padding:12px;
-                                    border-radius:8px;">
-                        <b style="color:#C62828;">
-                        {event['title']}
-                        </b>
-                        <span style="float:right;color:#777;">
-                        {event['date']}
-                        </span>
-                        </div>
-                        """,
-                        unsafe_allow_html=True,
-                    )
-            
-                else:
-            
-                    st.markdown(
-                        f"""
-                        <div style="background:#E8F5E9;
-                                    padding:12px;
-                                    border-radius:8px;">
-                        <b style="color:#2E7D32;">
-                        {event['title']}
-                        </b>
-                        <span style="float:right;color:#777;">
-                        {event['date']}
-                        </span>
-                        </div>
-                        """,
-                        unsafe_allow_html=True,
-                    )
-            
-                if "next_steps" in event:
-            
-                    st.markdown("##### Next Steps")
-            
-                    for step in event["next_steps"]:
-                        st.markdown(
-                            f"<div style='font-size:13px'>• {step}</div>",
-                            unsafe_allow_html=True,
-                        )
+                with icon_col:
+
+                    if event["status"] == "error":
+                        st.markdown("## ❌")
+                    else:
+                        st.markdown("## ✅")
+
+                with content_col:
+
+                    banner_left, banner_right = st.columns([6, 1])
+
+                    with banner_left:
+
+                        if event["status"] == "error":
+                            st.error(event["title"])
+                        else:
+                            st.success(event["title"])
+
+                    with banner_right:
+                        st.caption(event["date"])
+
+                    if "next_steps" in event:
+
+                        st.markdown("##### Next Steps")
+
+                        for step in event["next_steps"]:
+                            st.markdown(
+                                f"<div style='font-size:13px'>• {step}</div>",
+                                unsafe_allow_html=True
+                            )
+
+                if idx < len(events) - 1:
+                    st.divider()
