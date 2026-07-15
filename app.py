@@ -55,7 +55,7 @@ st.markdown("### Earlier this month   July 2026")
 outer_left, outer_middle, outer_right = st.columns([1, 8, 3])
 
 with outer_left:
-    st.markdown("# 🛡️")
+    st.markdown("# ❌")
 
 with outer_middle:
 
@@ -98,7 +98,7 @@ if st.session_state.expanded:
             with icon_col:
     
                 if event["status"] == "error":
-                    st.markdown("### 🛡️")
+                    st.markdown("### ❌")
                 else:
                     st.markdown("### ✅")
     
