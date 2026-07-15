@@ -125,31 +125,25 @@ if st.session_state.expanded:
                     st.markdown(
                         f"""
                         <div style="
-                            background:#E8F5E9;
-                            color:#2E7D32;
+                            background:#FCE8E8;
+                            color:#C62828;
                             padding:10px 14px;
                             border-radius:10px;
-                            font-size:14px;">
-                            {event['title']}
+                            font-size:14px;
+                            display:flex;
+                            justify-content:space-between;
+                            align-items:center;">
+                            
+                            <span>{event['title']}</span>
+                    
+                            <span style="
+                                font-size:12px;
+                                color:#8A8A8A;
+                                white-space:nowrap;">
+                                {event['date']}
+                            </span>
+                    
                         </div>
                         """,
                         unsafe_allow_html=True,
                     )
-    
-                st.caption(event["date"])
-    
-                if "next_steps" in event:
-    
-                    st.markdown("##### Next Steps")
-    
-                    for step in event["next_steps"]:
-                        st.markdown(
-                            f"""
-                            <div style="font-size:13px; margin-bottom:4px;">
-                            • {step}
-                            </div>
-                            """,
-                            unsafe_allow_html=True,
-                        )
-    
-            st.divider()
