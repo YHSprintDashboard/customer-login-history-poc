@@ -121,10 +121,7 @@ if st.session_state.expanded:
 
         with event_col1:
 
-            if event["status"] == "error":
-                st.markdown("### 🔴")
-            else:
-                st.markdown("### ✅")
+            icon = "🛡️" if event["status"] == "error" else "✅"
 
         with event_col2:
 
