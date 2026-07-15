@@ -95,45 +95,46 @@ with col2:
 
     st.markdown(
         f"""
+<div style="
+    border:2px solid #d7deeb;
+    border-radius:20px;
+    padding:30px;
+    background:white;">
+
+    <div style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;">
+
         <div style="
-            border:2px solid #d7deeb;
-            border-radius:20px;
-            padding:30px;
-            background:white;">
-
-            <div style="
-                display:flex;
-                justify-content:space-between;
-                align-items:center;">
-
-                <div style="
-                    font-size:22px;
-                    font-weight:700;
-                    color:#1f355e;">
-                    Your Login History
-                </div>
-
-                <div style="
-                    color:#7081a3;
-                    font-size:18px;">
-                    {latest['date']}
-                </div>
-
-            </div>
-
-            <div style="margin-top:25px;">
-
-                <span style="
-                    background:#fdecec;
-                    color:#d62828;
-                    padding:10px 16px;
-                    border-radius:25px;
-                    font-weight:600;">
-                    {latest['title']}
-                </span>
-
-            </div>
-
+            font-size:22px;
+            font-weight:700;
+            color:#1f355e;">
+            Your Login History
         </div>
-        """,
+
+        <div style="
+            color:#7081a3;
+            font-size:18px;">
+            {latest['date']}
+        </div>
+
+    </div>
+
+    <div style="margin-top:25px;">
+
+        <span style="
+            background:#fdecec;
+            color:#d62828;
+            padding:10px 16px;
+            border-radius:25px;
+            font-weight:600;">
+            {latest['title']}
+        </span>
+
+    </div>
+
+</div>
+""",
         unsafe_allow_html=True
+    )
