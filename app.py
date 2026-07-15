@@ -104,34 +104,41 @@ if st.session_state.expanded:
     
             with content_col:
 
-                banner_colour = "#FCE8E8" if event["status"] == "error" else "#E8F5E9"
-                text_colour = "#C62828" if event["status"] == "error" else "#2E7D32"
+                if event["status"] == "error":
             
-                st.markdown(
-                    f"""
-                    <div style="
-                        background:{banner_colour};
-                        color:{text_colour};
-                        padding:10px 14px;
-                        border-radius:10px;
-                        font-size:14px;
-                        display:flex;
-                        justify-content:space-between;
-                        align-items:center;">
-            
-                        <span>{event['title']}</span>
-            
-                        <span style="
-                            font-size:12px;
-                            color:#666666;
-                            white-space:nowrap;">
-                            {event['date']}
+                    st.markdown(
+                        f"""
+                        <div style="background:#FCE8E8;
+                                    padding:12px;
+                                    border-radius:8px;">
+                        <b style="color:#C62828;">
+                        {event['title']}
+                        </b>
+                        <span style="float:right;color:#777;">
+                        {event['date']}
                         </span>
+                        </div>
+                        """,
+                        unsafe_allow_html=True,
+                    )
             
-                    </div>
-                    """,
-                    unsafe_allow_html=True,
-                )
+                else:
+            
+                    st.markdown(
+                        f"""
+                        <div style="background:#E8F5E9;
+                                    padding:12px;
+                                    border-radius:8px;">
+                        <b style="color:#2E7D32;">
+                        {event['title']}
+                        </b>
+                        <span style="float:right;color:#777;">
+                        {event['date']}
+                        </span>
+                        </div>
+                        """,
+                        unsafe_allow_html=True,
+                    )
             
                 if "next_steps" in event:
             
@@ -139,12 +146,6 @@ if st.session_state.expanded:
             
                     for step in event["next_steps"]:
                         st.markdown(
-                            f"""
-                            <div style="
-                                font-size:13px;
-                                margin-bottom:6px;">
-                                • {step}
-                            </div>
-                            """,
+                            f"<div style='font-size:13px'>• {step}</div>",
                             unsafe_allow_html=True,
                         )
