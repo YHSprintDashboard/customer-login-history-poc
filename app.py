@@ -42,30 +42,11 @@ latest = events[0]
 if "expanded" not in st.session_state:
     st.session_state.expanded = False
 
-
-def toggle():
-    st.session_state.expanded = not st.session_state.expanded
-
-
 # ------------------------
 # HEADER
 # ------------------------
 
-st.markdown(
-    """
-    <div style="
-        font-size:18px;
-        font-weight:600;
-        color:#1f355e;
-        margin-bottom:20px;">
-        Earlier this month
-        <span style="color:#5d6d8f;font-weight:400;">
-            &nbsp;&nbsp;July 2026
-        </span>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+st.markdown("### Earlier this month   July 2026")
 
 # ------------------------
 # CARD
@@ -74,19 +55,13 @@ st.markdown(
 outer_left, outer_middle, outer_right = st.columns([1, 8, 3])
 
 with outer_left:
-
     st.markdown("# 🛡️")
-
-    if st.session_state.expanded:
-
-        st.markdown("---")
-        st.markdown("### EVENTS")
 
 with outer_middle:
 
     with st.container(border=True):
 
-        title_col, date_col, arrow_col = st.columns([5, 1, 1])
+        title_col, date_col, arrow_col = st.columns([6, 2, 1])
 
         with title_col:
             st.subheader("Your Login History")
@@ -106,37 +81,73 @@ with outer_middle:
 
         st.error(latest["title"])
 
-
 # ------------------------
 # EXPANDED CONTENT
 # ------------------------
 
 if st.session_state.expanded:
 
-    
+    st.markdown("### EVENTS")
 
     for event in events:
 
-        event_col1, event_col2 = st.columns([1, 12])
+        icon_col, content_col = st.columns([1, 12])
 
-        with event_col1:
-
-            icon = "🛡️" if event["status"] == "error" else "✅"
-
-        with event_col2:
+        with icon_col:
 
             if event["status"] == "error":
-                st.error(event["title"])
+                st.markdown("### 🛡️")
             else:
-                st.success(event["title"])
+                st.markdown("### ✅")
+
+        with content_col:
+
+            if event["status"] == "error":
+
+                st.markdown(
+                    f"""
+                    <div style="
+                        background:#FCE8E8;
+                        color:#C62828;
+                        padding:10px 14px;
+                        border-radius:10px;
+                        font-size:14px;">
+                        {event['title']}
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
+
+            else:
+
+                st.markdown(
+                    f"""
+                    <div style="
+                        background:#E8F5E9;
+                        color:#2E7D32;
+                        padding:10px 14px;
+                        border-radius:10px;
+                        font-size:14px;">
+                        {event['title']}
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
 
             st.caption(event["date"])
 
             if "next_steps" in event:
 
-                st.markdown("#### Next Steps")
+                st.markdown("##### Next Steps")
 
                 for step in event["next_steps"]:
-                    st.markdown(f"- {step}")
+                    st.markdown(
+                        f"""
+                        <div style="font-size:13px; margin-bottom:4px;">
+                        • {step}
+                        </div>
+                        """,
+                        unsafe_allow_html=True,
+                    )
 
         st.divider()
