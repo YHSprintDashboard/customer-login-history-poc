@@ -93,32 +93,47 @@ with col1:
 
 with col2:
 
-    st.markdown(
-        f"""
-        <div style="
-            border:2px solid #d7deeb;
-            border-radius:20px;
-            padding:30px;
-            background:white;">
+    with st.container(border=True):
 
-            <h2 style="color:#1f355e;">
-                Your Login History
-            </h2>
+        col_title, col_date = st.columns([4, 1])
 
-            <p style="color:#7081a3;">
-                {latest['date']}
-            </p>
+        with col_title:
+            st.subheader("Your Login History")
 
-            <div style="
-                background:#fdecec;
-                color:#d62828;
-                padding:12px;
-                border-radius:10px;
-                font-weight:bold;">
-                {latest['title']}
-            </div>
+        with col_date:
+            st.write("")
+            st.write(latest["date"])
 
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+        st.error(latest["title"])
+
+
+if st.button(
+    "▼ Expand Login History"
+    if not st.session_state.expanded
+    else "▲ Collapse Login History",
+    use_container_width=True,
+):
+    st.session_state.expanded = not st.session_state.expanded
+
+
+if st.session_state.expanded:
+
+    st.markdown("## Events")
+
+    for event in events:
+
+        if event["status"] == "error":
+            st.error(event["title"])
+        else:
+            st.success(event["title"])
+
+        st.caption(event["date"])
+
+        if "next_steps" in event:
+
+            st.markdown("### Next Steps")
+
+            for step in event["next_steps"]:
+                st.markdown(f"- {step}")
+
+        st.divider()
