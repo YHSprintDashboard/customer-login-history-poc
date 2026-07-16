@@ -189,141 +189,146 @@ else:
     st.sidebar.markdown("🚪 Log Out")
 
     # ------------------------
+    # CUSTOM STYLES
+    # ------------------------
+
+    st.markdown("""
+    <style>
+
+    .hero-card{
+        background:#45105F;
+        border-radius:20px;
+        padding:30px;
+        color:white;
+    }
+
+    .help-card{
+        background:#45105F;
+        border-radius:20px;
+        padding:25px;
+        color:white;
+    }
+
+    .repair-card{
+        background:#FBE8F1;
+        border-radius:18px;
+        padding:20px;
+        min-height:220px;
+    }
+
+    .rent-card{
+        background:#EEF0FF;
+        border-radius:18px;
+        padding:20px;
+        min-height:220px;
+    }
+
+    .details-card{
+        background:#FFF8E1;
+        border-radius:18px;
+        padding:20px;
+        min-height:220px;
+    }
+
+    .case-card{
+        background:#E8FAF8;
+        border-radius:18px;
+        padding:20px;
+        min-height:220px;
+    }
+
+    .side-card{
+        background:white;
+        border-radius:18px;
+        padding:20px;
+        border:1px solid #E6E2EC;
+    }
+
+    .yh-footer{
+        position:fixed;
+        bottom:0;
+        left:0;
+        width:100%;
+        background:#45105F;
+        color:white;
+        text-align:center;
+        padding:12px;
+        z-index:999;
+    }
+
+    </style>
+    """, unsafe_allow_html=True)
+
+    # ------------------------
     # MAIN LAYOUT
     # ------------------------
 
-    main_col, right_col = st.columns([3, 1])
+    main_col, right_col = st.columns([3,1])
 
     # ------------------------
-    # MAIN CONTENT
+    # MAIN COLUMN
     # ------------------------
 
     with main_col:
 
-        with st.container(border=True):
+        st.markdown("""
+        <div class="hero-card">
+            <div style="color:#FF5E8A;font-weight:bold;">
+                GOOD MORNING
+            </div>
 
-            st.markdown("##### GOOD MORNING")
+            <h1 style="color:white;">
+                Welcome back, Prem.
+            </h1>
 
-            st.title("Welcome back, Prem.")
+            <p style="font-size:18px;color:#D8CBE3;">
+                Here's what's happening with your home at 15 Test Close, Testgate.
+            </p>
 
-            st.write(
-                "Here's what's happening with your home at 15 Test Close, Testgate."
-            )
-
-            st.warning(
-                "⚠️ Your rent is overdue. Please pay £47.50 as soon as possible."
-            )
+            <div style="
+                background:#6C2149;
+                padding:18px;
+                border-radius:12px;
+                margin-top:20px;">
+                ⚠️ Your rent is overdue. Please pay £47.50 as soon as possible.
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
 
         st.write("")
 
-        # Quick Actions
+        # ------------------------
+        # QUICK ACTION TILES
+        # ------------------------
 
         c1, c2, c3, c4 = st.columns(4)
 
         with c1:
-            with st.container(border=True):
-                st.markdown("### 🔧")
-                st.subheader("Log a Repair")
-                st.write("Tell us about a problem with your home")
+            st.markdown("""
+            <div class="repair-card">
+                <h3>🔧 Log a Repair</h3>
+                <p>Tell us about a problem with your home</p>
+                <b>Start →</b>
+            </div>
+            """, unsafe_allow_html=True)
 
         with c2:
-            with st.container(border=True):
-                st.markdown("### 💳")
-                st.subheader("Rent & Payments")
-                st.write("View balance and payment information")
+            st.markdown("""
+            <div class="rent-card">
+                <h3>💳 Rent & Payments</h3>
+                <p>View balance and payment information</p>
+                <b>View →</b>
+            </div>
+            """, unsafe_allow_html=True)
 
         with c3:
-            with st.container(border=True):
-                st.markdown("### 👤")
-                st.subheader("My Details")
-                st.write("Manage your contact details")
+            st.markdown("""
+            <div class="details-card">
+                <h3>👤 My Details</h3>
+                <p>Manage your contact information</p>
+                <b>View →</b>
+            </div>
+            """, unsafe_allow_html=True)
 
         with c4:
-            with st.container(border=True):
-                st.markdown("### 📋")
-                st.subheader("Submit a Case")
-                st.write("Complaints, queries and feedback")
-
-        st.write("")
-
-        # Help & Support
-
-        with st.container(border=True):
-
-            st.subheader("Help & Support")
-
-            st.text_input(
-                "",
-                placeholder="Search help articles..."
-            )
-
-            st.markdown("##### POPULAR SEARCHES")
-
-            st.write("• How do I set up a direct debit for rent?")
-            st.write("• What repairs is Yorkshire Housing responsible for?")
-            st.write("• How do I report a neighbour dispute?")
-            st.write("• What should I do if I have a leak?")
-            st.write("• How do I end my tenancy?")
-
-    # ------------------------
-    # RIGHT COLUMN
-    # ------------------------
-
-    with right_col:
-
-        with st.container(border=True):
-
-            st.subheader("Get in Touch")
-
-            st.button(
-                "💬 Ask a Question",
-                use_container_width=True
-            )
-
-            st.button(
-                "🚨 Emergency Repair",
-                use_container_width=True
-            )
-
-        st.write("")
-
-        with st.container(border=True):
-
-            st.subheader("My Open Cases")
-
-            st.info("Repair Case #24-8312")
-
-            st.info("Complaint Case #24-7901")
-
-            st.button(
-                "View all cases",
-                use_container_width=True
-            )
-
-    # ------------------------
-    # FOOTER
-    # ------------------------
-
-    st.markdown(
-        """
-        <style>
-        .yh-footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #46105d;
-            color: white;
-            text-align: center;
-            padding: 12px;
-            font-size: 12px;
-            z-index: 999;
-        }
-        </style>
-
-        <div class="yh-footer">
-            © 2026 Yorkshire Housing. All Rights Reserved.
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+            st.markdown(""
