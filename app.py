@@ -292,35 +292,31 @@ else:
                 st.write("Complaints, queries and feedback")
                 st.link_button("Start →", "#")
 
-        st.write("")
+st.write("")
 
-        # Help & Support
+st.markdown("""
+<div style="
+background:#45105F;
+padding:25px;
+border-radius:20px;
+color:white;
+">
+<h2>Help & Support</h2>
+</div>
+""", unsafe_allow_html=True)
 
-        st.markdown("""
-        <div style="
-        background:#45105F;
-        padding:25px;
-        border-radius:20px;
-        color:white;">
-        <h2>Help & Support</h2>
-        </div>
-        """,
-        unsafe_allow_html=True)
+st.text_input(
+    "",
+    placeholder="Search help articles..."
+)
 
-            st.subheader("Help & Support")
+st.markdown("##### POPULAR SEARCHES")
 
-            st.text_input(
-                "",
-                placeholder="Search help articles..."
-            )
-
-            st.markdown("##### POPULAR SEARCHES")
-
-            st.write("• How do I set up a direct debit for rent?")
-            st.write("• What repairs is Yorkshire Housing responsible for?")
-            st.write("• How do I report a neighbour dispute?")
-            st.write("• What should I do if I have a leak?")
-            st.write("• How do I end my tenancy?")
+st.write("• How do I set up a direct debit for rent?")
+st.write("• What repairs is Yorkshire Housing responsible for?")
+st.write("• How do I report a neighbour dispute?")
+st.write("• What should I do if I have a leak?")
+st.write("• How do I end my tenancy?")
 
     # ------------------------
     # RIGHT COLUMN
