@@ -307,13 +307,109 @@ else:
             """, unsafe_allow_html=True)
 
         with c2:
-            st.info("💳 Rent & Payments")
+
+            st.markdown("""
+            <div style="
+            background:#E7ECFC;
+            padding:25px;
+            border-radius:20px;
+            min-height:240px;">
+        
+            <div style="
+            background:#3E4EB8;
+            width:60px;
+            height:60px;
+            border-radius:15px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:white;
+            font-size:28px;">
+            💳
+            </div>
+        
+            <h3>Rent & Payments</h3>
+        
+            <p>
+            View your balance, statements and payments
+            </p>
+        
+            <b style="color:#3E4EB8;">
+            View →
+            </b>
+        
+            </div>
+            """, unsafe_allow_html=True)
 
         with c3:
-            st.info("👤 My Details")
+
+            st.markdown("""
+            <div style="
+            background:#F7F0D7;
+            padding:25px;
+            border-radius:20px;
+            min-height:240px;">
+        
+            <div style="
+            background:#E6AF14;
+            width:60px;
+            height:60px;
+            border-radius:15px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:white;
+            font-size:28px;">
+            👤
+            </div>
+        
+            <h3>My Details</h3>
+        
+            <p>
+            Update your contact and personal information
+            </p>
+        
+            <b style="color:#D59B00;">
+            View →
+            </b>
+        
+            </div>
+            """, unsafe_allow_html=True)
 
         with c4:
-            st.info("📋 Submit a Case")
+
+            st.markdown("""
+            <div style="
+            background:#DDF2EE;
+            padding:25px;
+            border-radius:20px;
+            min-height:240px;">
+        
+            <div style="
+            background:#008E7A;
+            width:60px;
+            height:60px;
+            border-radius:15px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:white;
+            font-size:28px;">
+            📋
+            </div>
+        
+            <h3>Submit a Case</h3>
+        
+            <p>
+            Log a complaint, query or feedback
+            </p>
+        
+            <b style="color:#008E7A;">
+            Start →
+            </b>
+        
+            </div>
+            """, unsafe_allow_html=True))
 
         st.write("")
 
