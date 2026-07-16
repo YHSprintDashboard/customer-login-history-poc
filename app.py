@@ -274,7 +274,37 @@ else:
         c1, c2, c3, c4 = st.columns(4)
 
         with c1:
-            st.info("🔧 Log a Repair")
+
+            st.markdown("""
+            <div style="
+            background:#F9E3EB;
+            padding:25px;
+            border-radius:20px;
+            min-height:240px;">
+        
+            <div style="
+            background:#D41468;
+            width:60px;
+            height:60px;
+            border-radius:15px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:white;
+            font-size:28px;">
+            🔧
+            </div>
+        
+            <h3>Log a Repair</h3>
+        
+            <p>Tell us about a problem with your home</p>
+        
+            <b style="color:#D41468;">
+            Start →
+            </b>
+        
+            </div>
+            """, unsafe_allow_html=True)
 
         with c2:
             st.info("💳 Rent & Payments")
@@ -352,16 +382,6 @@ else:
         
         </div>
         """, unsafe_allow_html=True)
-
-            st.button(
-                "💬 Ask a Question",
-                use_container_width=True
-            )
-
-            st.button(
-                "🚨 Emergency Repair",
-                use_container_width=True
-            )
 
         st.write("")
 
