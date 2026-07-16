@@ -261,72 +261,73 @@ else:
         }
         </style>
         """, unsafe_allow_html=True)
-        
+    
         st.markdown('<div class="hero-box">', unsafe_allow_html=True)
     
-            hero_left, hero_right = st.columns([2, 1])
+        hero_left, hero_right = st.columns([2, 1])
     
-            with hero_left:
+        with hero_left:
     
-                st.markdown(
-                    "<span style='color:#FF5E8A;font-size:20px;font-weight:bold;'>GOOD MORNING</span>",
-                    unsafe_allow_html=True
-                )
+            st.markdown(
+                "<span style='color:#FF5E8A;font-size:20px;font-weight:bold;'>GOOD MORNING</span>",
+                unsafe_allow_html=True
+            )
     
-                st.markdown("## Welcome back, Prem.")
+            st.markdown("## Welcome back, Prem.")
     
-                st.write(
-                    "Here's what's happening with your home at 15 Test Close, Testgate."
-                )
+            st.write(
+                "Here's what's happening with your home at 15 Test Close, Testgate."
+            )
     
-                st.warning(
-                    "⚠️ Your rent is overdue. Please pay £47.50 as soon as possible."
-                )
+            st.warning(
+                "⚠️ Your rent is overdue. Please pay £47.50 as soon as possible."
+            )
     
-            with hero_right:
-
-                st.markdown("""
-                <div style="
-                background:#5A2674;
-                padding:20px;
-                border-radius:16px;
-                ">
-                """, unsafe_allow_html=True)
+        with hero_right:
     
-                st.caption("CURRENT BALANCE")
+            st.markdown("""
+            <div style="
+            background:#5A2674;
+            padding:20px;
+            border-radius:16px;
+            ">
+            """, unsafe_allow_html=True)
     
-                st.markdown(
-                    "<h1 style='color:#FF7373;'>-£47.50</h1>",
-                    unsafe_allow_html=True
-                )
+            st.caption("CURRENT BALANCE")
     
-                st.write("Your rent is overdue")
+            st.markdown(
+                "<h1 style='color:#FF7373;'>-£47.50</h1>",
+                unsafe_allow_html=True
+            )
     
-                st.divider()
+            st.write("Your rent is overdue")
     
-                st.caption("NEXT PAYMENT")
-                st.write("1 October 2026")
+            st.divider()
     
-                st.divider()
+            st.caption("NEXT PAYMENT")
+            st.write("1 October 2026")
     
-                st.caption("WEEKLY RENT")
-                st.write("£118.00")
+            st.divider()
     
-                st.button(
-                    "Make a Payment",
-                    type="primary",
-                    use_container_width=True
-                )
+            st.caption("WEEKLY RENT")
+            st.write("£118.00")
     
-                st.button(
-                    "View Statements",
-                    use_container_width=True
-                )
-
+            st.button(
+                "Make a Payment",
+                type="primary",
+                use_container_width=True
+            )
+    
+            st.button(
+                "View Statements",
+                use_container_width=True
+            )
+    
+            st.markdown("</div>", unsafe_allow_html=True)
+    
         st.markdown("</div>", unsafe_allow_html=True)
     
         st.write("")
-
         c1, c2, c3, c4 = st.columns(4)
 
         with c1:
