@@ -251,7 +251,18 @@ else:
 
     with main_col:
 
-        with st.container(border=True):
+        st.markdown("""
+        <style>
+        .hero-box{
+            background:#45105F;
+            border-radius:24px;
+            padding:30px;
+            margin-bottom:20px;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+        
+        st.markdown('<div class="hero-box">', unsafe_allow_html=True)
     
             hero_left, hero_right = st.columns([2, 1])
     
@@ -273,6 +284,14 @@ else:
                 )
     
             with hero_right:
+
+                st.markdown("""
+                <div style="
+                background:#5A2674;
+                padding:20px;
+                border-radius:16px;
+                ">
+                """, unsafe_allow_html=True)
     
                 st.caption("CURRENT BALANCE")
     
@@ -295,6 +314,7 @@ else:
     
                 st.button(
                     "Make a Payment",
+                    type="primary",
                     use_container_width=True
                 )
     
@@ -302,6 +322,8 @@ else:
                     "View Statements",
                     use_container_width=True
                 )
+
+        st.markdown("</div>", unsafe_allow_html=True)
     
         st.write("")
 
@@ -517,11 +539,23 @@ else:
 
         with st.container(border=True):
 
-            st.subheader("My Open Cases")
+            st.caption("#24-8312 • Repair")
+        
+            st.markdown("**Leaking kitchen tap**")
+        
+            st.write("Booked: 12 Sep 2026")
+        
+            st.success("IN PROGRESS")
 
-            st.info("Repair Case #24-8312")
-
-            st.info("Complaint Case #24-7901")
+        with st.container(border=True):
+    
+            st.caption("#24-7901 • Complaint")
+        
+            st.markdown("**Noise from neighbouring property**")
+        
+            st.write("Closed: 28 Aug 2026")
+        
+            st.success("COMPLETED")
 
     st.markdown("""
     <div class="yh-footer">
