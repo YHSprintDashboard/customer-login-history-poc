@@ -257,10 +257,10 @@ else:
         <div style="
             background:#45105F;
             color:white;
-            padding:30px;
+            padding:20px;
             border-radius:20px;">
             <h4 style="color:#FF5E8A;">GOOD MORNING</h4>
-            <h1>Welcome back, Prem.</h1>
+            <h2>Welcome back, Prem.</h2>
             <p>Here's what's happening with your home at 15 Test Close, Testgate.</p>
         </div>
         """, unsafe_allow_html=True)
@@ -280,7 +280,7 @@ else:
             background:#F9E3EB;
             padding:25px;
             border-radius:20px;
-            min-height:240px;">
+            min-height:180px;">
         
             <div style="
             background:#D41468;
@@ -313,7 +313,7 @@ else:
             background:#E7ECFC;
             padding:25px;
             border-radius:20px;
-            min-height:240px;">
+            min-height:180px;">
         
             <div style="
             background:#3E4EB8;
@@ -348,7 +348,7 @@ else:
             background:#F7F0D7;
             padding:25px;
             border-radius:20px;
-            min-height:240px;">
+            min-height:180px;">
         
             <div style="
             background:#E6AF14;
@@ -383,7 +383,7 @@ else:
             background:#DDF2EE;
             padding:25px;
             border-radius:20px;
-            min-height:240px;">
+            min-height:180px;">
         
             <div style="
             background:#008E7A;
@@ -416,7 +416,7 @@ else:
         st.markdown("""
         <div style="
         background:#45105F;
-        padding:30px;
+        padding:20px;
         border-radius:20px;
         color:white;
         ">
