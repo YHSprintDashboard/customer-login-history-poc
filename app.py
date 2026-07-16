@@ -162,6 +162,10 @@ if SHOW_LOGIN_HISTORY_POC:
 
 else:
 
+    # ------------------------
+    # SIDEBAR
+    # ------------------------
+
     st.sidebar.markdown("## 🏠 Yorkshire Housing")
     st.sidebar.markdown("Customer Portal")
 
@@ -174,39 +178,152 @@ else:
     st.sidebar.markdown("🏡 My Home")
     st.sidebar.markdown("💬 Get in Touch")
 
-    with st.container(border=True):
+    st.sidebar.divider()
 
-        st.markdown("##### GOOD MORNING")
-    
-        st.title("Welcome back, Prem.")
-    
-        st.write(
-            "Here's what's happening with your home at 15 Test Close, Testgate."
-        )
-    
-        st.warning(
-            "⚠️ Your rent is overdue. Please pay £47.50 as soon as possible."
-        )
-st.markdown(
-    """
-    <style>
-    .yh-footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: #46105d;
-        color: white;
-        text-align: center;
-        padding: 12px;
-        font-size: 12px;
-        z-index: 999;
-    }
-    </style>
+    st.sidebar.markdown("### 👤 Prem Nair")
+    st.sidebar.caption("Tenant since 2026")
 
-    <div class="yh-footer">
-        © 2026 Yorkshire Housing. All Rights Reserved.
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+    st.sidebar.markdown("👤 My Details")
+    st.sidebar.markdown("⚙️ Account Settings")
+    st.sidebar.markdown("🔑 Reset Password")
+    st.sidebar.markdown("🚪 Log Out")
+
+    # ------------------------
+    # MAIN LAYOUT
+    # ------------------------
+
+    main_col, right_col = st.columns([3, 1])
+
+    # ------------------------
+    # MAIN CONTENT
+    # ------------------------
+
+    with main_col:
+
+        with st.container(border=True):
+
+            st.markdown("##### GOOD MORNING")
+
+            st.title("Welcome back, Prem.")
+
+            st.write(
+                "Here's what's happening with your home at 15 Test Close, Testgate."
+            )
+
+            st.warning(
+                "⚠️ Your rent is overdue. Please pay £47.50 as soon as possible."
+            )
+
+        st.write("")
+
+        # Quick Actions
+
+        c1, c2, c3, c4 = st.columns(4)
+
+        with c1:
+            with st.container(border=True):
+                st.markdown("### 🔧")
+                st.subheader("Log a Repair")
+                st.write("Tell us about a problem with your home")
+
+        with c2:
+            with st.container(border=True):
+                st.markdown("### 💳")
+                st.subheader("Rent & Payments")
+                st.write("View balance and payment information")
+
+        with c3:
+            with st.container(border=True):
+                st.markdown("### 👤")
+                st.subheader("My Details")
+                st.write("Manage your contact details")
+
+        with c4:
+            with st.container(border=True):
+                st.markdown("### 📋")
+                st.subheader("Submit a Case")
+                st.write("Complaints, queries and feedback")
+
+        st.write("")
+
+        # Help & Support
+
+        with st.container(border=True):
+
+            st.subheader("Help & Support")
+
+            st.text_input(
+                "",
+                placeholder="Search help articles..."
+            )
+
+            st.markdown("##### POPULAR SEARCHES")
+
+            st.write("• How do I set up a direct debit for rent?")
+            st.write("• What repairs is Yorkshire Housing responsible for?")
+            st.write("• How do I report a neighbour dispute?")
+            st.write("• What should I do if I have a leak?")
+            st.write("• How do I end my tenancy?")
+
+    # ------------------------
+    # RIGHT COLUMN
+    # ------------------------
+
+    with right_col:
+
+        with st.container(border=True):
+
+            st.subheader("Get in Touch")
+
+            st.button(
+                "💬 Ask a Question",
+                use_container_width=True
+            )
+
+            st.button(
+                "🚨 Emergency Repair",
+                use_container_width=True
+            )
+
+        st.write("")
+
+        with st.container(border=True):
+
+            st.subheader("My Open Cases")
+
+            st.info("Repair Case #24-8312")
+
+            st.info("Complaint Case #24-7901")
+
+            st.button(
+                "View all cases",
+                use_container_width=True
+            )
+
+    # ------------------------
+    # FOOTER
+    # ------------------------
+
+    st.markdown(
+        """
+        <style>
+        .yh-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #46105d;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-size: 12px;
+            z-index: 999;
+        }
+        </style>
+
+        <div class="yh-footer">
+            © 2026 Yorkshire Housing. All Rights Reserved.
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
