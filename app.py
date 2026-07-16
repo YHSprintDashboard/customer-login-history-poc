@@ -6,6 +6,26 @@ import streamlit as st
 
 SHOW_LOGIN_HISTORY_POC = False
 
+st.markdown("""
+<style>
+
+/* Main page */
+.stApp {
+    background-color: #f3f1f5;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background-color: #46105d;
+}
+
+section[data-testid="stSidebar"] * {
+    color: white !important;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
 st.set_page_config(
     page_title="Customer Login History",
     layout="wide"
@@ -142,6 +162,20 @@ if SHOW_LOGIN_HISTORY_POC:
 
 else:
 
-    st.title("Yorkshire Housing Customer Portal")
+    st.sidebar.markdown("## 🏠 Yorkshire Housing")
+    st.sidebar.markdown("Customer Portal")
 
-    st.info("New Portal Design Coming Soon")
+    st.sidebar.divider()
+
+    st.sidebar.markdown("🏠 Home")
+    st.sidebar.markdown("🔧 Repairs")
+    st.sidebar.markdown("💳 Rent & Payments")
+    st.sidebar.markdown("📋 My Cases")
+    st.sidebar.markdown("🏡 My Home")
+    st.sidebar.markdown("💬 Get in Touch")
+
+    st.title("Welcome back, Prem.")
+
+    st.write(
+        "Here's what's happening with your home at 15 Test Street, Test County."
+    )
