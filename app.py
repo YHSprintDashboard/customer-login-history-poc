@@ -287,7 +287,7 @@ else:
 
         st.write("")
 
-       st.markdown("""
+        st.markdown("""
         <div style="
         background:#45105F;
         padding:30px;
