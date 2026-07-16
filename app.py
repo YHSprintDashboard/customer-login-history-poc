@@ -254,31 +254,49 @@ else:
         hero_left, hero_right = st.columns([2, 1])
 
         with hero_left:
-        
+
             st.markdown("""
             <div style="
                 background:#45105F;
-                padding:25px;
-                border-radius:20px;
-                color:white;">
+                padding:30px;
+                border-radius:20px;">
+        
+                <div style="
+                    color:#FF5E8A;
+                    font-weight:bold;
+                    font-size:22px;">
+                    GOOD MORNING
+                </div>
+        
+                <div style="
+                    color:white;
+                    font-size:28px;
+                    font-weight:bold;
+                    margin-top:20px;">
+                    Welcome back, Prem.
+                </div>
+        
+                <div style="
+                    color:#D6C6E2;
+                    font-size:18px;
+                    margin-top:15px;">
+                    Here's what's happening with your home at 15 Test Close, Testgate.
+                </div>
+        
+                <div style="
+                    background:#6A214B;
+                    border:1px solid #A24570;
+                    color:white;
+                    padding:15px;
+                    border-radius:12px;
+                    margin-top:25px;">
+        
+                    ⚠️ Your rent is overdue. Please pay £47.50 as soon as possible.
+        
+                </div>
+        
+            </div>
             """, unsafe_allow_html=True)
-        
-            st.markdown(
-                "<h4 style='color:#FF5E8A;'>GOOD MORNING</h4>",
-                unsafe_allow_html=True
-            )
-        
-            st.title("Welcome back, Prem.")
-        
-            st.write(
-                "Here's what's happening with your home at 15 Test Close, Testgate."
-            )
-        
-            st.warning(
-                "⚠️ Your rent is overdue. Please pay £47.50 as soon as possible."
-            )
-        
-            st.markdown("</div>", unsafe_allow_html=True)
         
         with hero_right:
         
