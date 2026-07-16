@@ -331,4 +331,78 @@ else:
             """, unsafe_allow_html=True)
 
         with c4:
-            st.markdown(""
+            st.markdown("""
+            <div class="case-card">
+                <h3>📋 Submit a Case</h3>
+                <p>Complaints, queries and feedback</p>
+                <b>Start →</b>
+            </div>
+            """, unsafe_allow_html=True)
+
+        st.write("")
+
+        # ------------------------
+        # HELP & SUPPORT
+        # ------------------------
+
+        st.markdown("""
+        <div class="help-card">
+            <h2 style="color:white;">Help & Support</h2>
+
+            <div style="
+                background:white;
+                color:#777;
+                padding:15px;
+                border-radius:10px;
+                margin-bottom:20px;">
+                Search help articles...
+            </div>
+
+            <p>• How do I set up a direct debit for rent?</p>
+            <p>• What repairs is Yorkshire Housing responsible for?</p>
+            <p>• How do I report a neighbour dispute?</p>
+            <p>• What should I do if I have a leak?</p>
+            <p>• How do I end my tenancy?</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    # ------------------------
+    # RIGHT COLUMN
+    # ------------------------
+
+    with right_col:
+
+        st.markdown("""
+        <div class="side-card">
+            <h3>Get in Touch</h3>
+            <hr>
+            <p>💬 Ask a Question</p>
+            <p>🚨 Emergency Repair</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.write("")
+
+        st.markdown("""
+        <div class="side-card">
+            <h3>My Open Cases</h3>
+
+            <p><strong>#24-8312 Repair</strong></p>
+            <p>Leaking kitchen tap</p>
+
+            <hr>
+
+            <p><strong>#24-7901 Complaint</strong></p>
+            <p>Noise from neighbouring property</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    # ------------------------
+    # FOOTER
+    # ------------------------
+
+    st.markdown("""
+    <div class="yh-footer">
+        © 2026 Yorkshire Housing. All Rights Reserved.
+    </div>
+    """, unsafe_allow_html=True)
