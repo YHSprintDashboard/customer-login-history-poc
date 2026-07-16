@@ -262,11 +262,14 @@ else:
         c1, c2, c3, c4 = st.columns(4)
 
         with c1:
-            with st.container(border=True):
-                st.markdown("### 🔧")
-                st.subheader("Log a Repair")
-                st.write("Tell us about a problem with your home")
-                st.link_button("Start →", "#")
+            st.markdown("""
+            <div class="quick-repair">
+                <h3>🔧 Log a Repair</h3>
+                <p>Tell us about a problem with your home</p>
+                <b>Start →</b>
+            </div>
+            """,
+            unsafe_allow_html=True)
 
         with c2:
             with st.container(border=True):
@@ -293,7 +296,16 @@ else:
 
         # Help & Support
 
-        with st.container(border=True):
+        st.markdown("""
+        <div style="
+        background:#45105F;
+        padding:25px;
+        border-radius:20px;
+        color:white;">
+        <h2>Help & Support</h2>
+        </div>
+        """,
+        unsafe_allow_html=True)
 
             st.subheader("Help & Support")
 
@@ -351,8 +363,27 @@ else:
     # FOOTER
     # ------------------------
 
-    st.markdown("---")
-
-    st.caption(
-        "© 2026 Yorkshire Housing. All Rights Reserved."
-    )
+    st.markdown("""
+    <style>
+    .yh-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #46105d;
+        color: white;
+        text-align: center;
+        padding: 12px;
+        font-size: 12px;
+        z-index: 999;
+    }
+    
+    .stApp {
+        padding-bottom: 60px;
+    }
+    </style>
+    
+    <div class="yh-footer">
+        © 2026 Yorkshire Housing. All Rights Reserved.
+    </div>
+    """, unsafe_allow_html=True)
