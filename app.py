@@ -4,7 +4,7 @@ import streamlit as st
 # FEATURE SWITCH
 # ----------------------------------
 
-SHOW_LOGIN_HISTORY_POC = False
+SHOW_LOGIN_HISTORY_POC = True
 
 st.markdown("""
 <style>
