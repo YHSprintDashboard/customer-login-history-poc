@@ -252,91 +252,57 @@ else:
     with main_col:
 
         hero_left, hero_right = st.columns([2, 1])
-    
+
         with hero_left:
-    
+        
             st.markdown("""
             <div style="
                 background:#45105F;
-                color:white;
                 padding:25px;
                 border-radius:20px;
-                min-height:230px;">
-    
-                <div style="
-                    color:#FF5E8A;
-                    font-weight:bold;
-                    font-size:20px;">
-                    GOOD MORNING
-                </div>
-    
-                <br>
-    
-                <h1 style="margin:0;">
-                    Welcome back, Prem.
-                </h1>
-    
-                <br>
-    
-                <p style="font-size:18px;color:#D6C6E2;">
-                    Here's what's happening with your home at 15 Test Close, Testgate.
-                </p>
-    
-                <div style="
-                    background:#6A214B;
-                    border:1px solid #A24570;
-                    padding:15px;
-                    border-radius:12px;
-                    margin-top:15px;">
-                    ⚠️ Your rent is overdue. Please pay £47.50 as soon as possible.
-                </div>
-    
-            </div>
+                color:white;">
             """, unsafe_allow_html=True)
-    
+        
+            st.markdown(
+                "<h4 style='color:#FF5E8A;'>GOOD MORNING</h4>",
+                unsafe_allow_html=True
+            )
+        
+            st.title("Welcome back, Prem.")
+        
+            st.write(
+                "Here's what's happening with your home at 15 Test Close, Testgate."
+            )
+        
+            st.warning(
+                "⚠️ Your rent is overdue. Please pay £47.50 as soon as possible."
+            )
+        
+            st.markdown("</div>", unsafe_allow_html=True)
+        
         with hero_right:
-    
-            st.markdown("""
-            <div style="
-                background:#5A2674;
-                color:white;
-                padding:25px;
-                border-radius:20px;
-                min-height:230px;">
-    
-                <div style="color:#B99BC9;font-size:14px;">
-                    CURRENT BALANCE
-                </div>
-    
-                <div style="
-                    color:#FF7373;
-                    font-size:48px;
-                    font-weight:bold;">
-                    -£47.50
-                </div>
-    
-                <br>
-    
-                <div style="
-                    background:#6A3A82;
-                    padding:12px;
-                    border-radius:12px;">
-                    <b>NEXT PAYMENT</b><br>
-                    1 October 2026
-                </div>
-    
-                <br>
-    
-                <div style="
-                    background:#6A3A82;
-                    padding:12px;
-                    border-radius:12px;">
-                    <b>WEEKLY RENT</b><br>
-                    £118.00
-                </div>
-    
-            </div>
-            """, unsafe_allow_html=True)
+        
+            with st.container(border=True):
+        
+                st.caption("CURRENT BALANCE")
+        
+                st.markdown(
+                    "<h1 style='color:#FF7373;'>-£47.50</h1>",
+                    unsafe_allow_html=True
+                )
+        
+                st.caption("NEXT PAYMENT")
+                st.write("1 October 2026")
+        
+                st.divider()
+        
+                st.caption("WEEKLY RENT")
+                st.write("£118.00")
+        
+                st.button(
+                    "Make a Payment",
+                    use_container_width=True
+                )
     
         st.write("")
 
