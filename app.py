@@ -287,22 +287,34 @@ else:
 
         st.write("")
 
-        with st.container(border=True):
-
-            st.subheader("Help & Support")
-
-            st.text_input(
-                "",
-                placeholder="Search help articles..."
-            )
-
-            st.markdown("##### POPULAR SEARCHES")
-
-            st.write("• How do I set up a direct debit for rent?")
-            st.write("• What repairs is Yorkshire Housing responsible for?")
-            st.write("• How do I report a neighbour dispute?")
-            st.write("• What should I do if I have a leak?")
-            st.write("• How do I end my tenancy?")
+       st.markdown("""
+        <div style="
+        background:#45105F;
+        padding:30px;
+        border-radius:20px;
+        color:white;
+        ">
+        
+        <h2 style="color:white;">Help & Support</h2>
+        
+        <div style="
+        background:white;
+        padding:15px;
+        border-radius:10px;
+        color:#999;
+        margin-top:20px;
+        margin-bottom:20px;">
+        Search help articles...
+        </div>
+        
+        <p>How do I set up a direct debit for rent?</p>
+        <p>What repairs is Yorkshire Housing responsible for?</p>
+        <p>How do I report a neighbour dispute?</p>
+        <p>What should I do if I have a leak?</p>
+        <p>How do I end my tenancy?</p>
+        
+        </div>
+        """, unsafe_allow_html=True)
 
     with right_col:
 
