@@ -247,234 +247,183 @@ else:
 
     # Layout
 
-    main_col, right_col = st.columns([3, 1])
+main_col, right_col = st.columns([3, 1])
 
-    with main_col:
-    
-        with st.container(border=True):
+with main_col:
 
-            hero_left, hero_right = st.columns([2, 1])
-        
-            with hero_left:
-        
-                st.markdown(
-                    "<span style='color:#FF5E8A;font-size:20px;font-weight:bold;'>GOOD MORNING</span>",
-                    unsafe_allow_html=True
-                )
-        
-                st.markdown("## Welcome back, Prem.")
-        
-                st.write(
-                    "Here's what's happening with your home at 15 Test Close, Testgate."
-                )
-        
-                st.warning(
-                    "⚠️ Your rent is overdue. Please pay £47.50 as soon as possible."
-                )
-        
-            with hero_right:
-        
-                st.caption("CURRENT BALANCE")
-        
-                st.markdown(
-                    "<h1 style='color:#FF7373;'>-£47.50</h1>",
-                    unsafe_allow_html=True
-                )
-        
-                st.write("Your rent is overdue")
-        
-                st.divider()
-        
-                st.caption("NEXT PAYMENT")
-                st.write("1 October 2026")
-        
-                st.divider()
-        
-                st.caption("WEEKLY RENT")
-                st.write("£118.00")
-        
-                st.button(
-                    "Make a Payment",
-                    type="primary",
-                    use_container_width=True
-                )
-        
-                st.button(
-                    "View Statements",
-                    use_container_width=True
-                )
-        
-        st.write("")
-        c1, c2, c3, c4 = st.columns(4)
+    with st.container(border=True):
 
-        with c1:
+        hero_left, hero_right = st.columns([2, 1])
 
-            st.markdown("""
-            <div style="
-            background:#F9E3EB;
-            padding:25px;
-            border-radius:20px;
-            min-height:180px;">
-        
-            <div style="
-            background:#D41468;
-            width:60px;
-            height:60px;
-            border-radius:15px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            color:white;
-            font-size:28px;">
-            🔧
-            </div>
-        
-            <h3>Log a Repair</h3>
-        
-            <p>Tell us about a problem with your home</p>
-        
-            <b style="color:#D41468;">
-            Start →
-            </b>
-        
-            </div>
-            """, unsafe_allow_html=True)
+        with hero_left:
 
-        with c2:
+            st.markdown(
+                "<span style='color:#FF5E8A;font-size:20px;font-weight:bold;'>GOOD MORNING</span>",
+                unsafe_allow_html=True
+            )
 
-            st.markdown("""
-            <div style="
-            background:#E7ECFC;
-            padding:25px;
-            border-radius:20px;
-            min-height:180px;">
-        
-            <div style="
-            background:#3E4EB8;
-            width:60px;
-            height:60px;
-            border-radius:15px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            color:white;
-            font-size:28px;">
-            💳
-            </div>
-        
-            <h3>Rent & Payments</h3>
-        
-            <p>
-            View your balance, statements and payments
-            </p>
-        
-            <b style="color:#3E4EB8;">
-            View →
-            </b>
-        
-            </div>
-            """, unsafe_allow_html=True)
+            st.markdown("## Welcome back, Prem.")
 
-        with c3:
+            st.write(
+                "Here's what's happening with your home at 15 Test Close, Testgate."
+            )
 
-            st.markdown("""
-            <div style="
-            background:#F7F0D7;
-            padding:25px;
-            border-radius:20px;
-            min-height:180px;">
-        
-            <div style="
-            background:#E6AF14;
-            width:60px;
-            height:60px;
-            border-radius:15px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            color:white;
-            font-size:28px;">
-            👤
-            </div>
-        
-            <h3>My Details</h3>
-        
-            <p>
-            Update your contact and personal information
-            </p>
-        
-            <b style="color:#D59B00;">
-            View →
-            </b>
-        
-            </div>
-            """, unsafe_allow_html=True)
+            st.warning(
+                "⚠️ Your rent is overdue. Please pay £47.50 as soon as possible."
+            )
 
-        with c4:
+        with hero_right:
 
-            st.markdown("""
-            <div style="
-            background:#DDF2EE;
-            padding:25px;
-            border-radius:20px;
-            min-height:180px;">
-        
-            <div style="
-            background:#008E7A;
-            width:60px;
-            height:60px;
-            border-radius:15px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            color:white;
-            font-size:28px;">
-            📋
-            </div>
-        
-            <h3>Submit a Case</h3>
-        
-            <p>
-            Log a complaint, query or feedback
-            </p>
-        
-            <b style="color:#008E7A;">
-            Start →
-            </b>
-        
-            </div>
-            """, unsafe_allow_html=True)
+            st.caption("CURRENT BALANCE")
 
-        st.write("")
+            st.markdown(
+                "<h1 style='color:#FF7373;'>-£47.50</h1>",
+                unsafe_allow_html=True
+            )
+
+            st.write("Your rent is overdue")
+
+            st.divider()
+
+            st.caption("NEXT PAYMENT")
+            st.write("1 October 2026")
+
+            st.divider()
+
+            st.caption("WEEKLY RENT")
+            st.write("£118.00")
+
+            st.button(
+                "Make a Payment",
+                type="primary",
+                use_container_width=True
+            )
+
+            st.button(
+                "View Statements",
+                use_container_width=True
+            )
+
+    st.write("")
+
+    c1, c2, c3, c4 = st.columns(4)
+
+    with c1:
 
         st.markdown("""
         <div style="
-        background:#45105F;
+        background:#F9E3EB;
         padding:20px;
         border-radius:20px;
-        color:white;
-        ">
-        
-        <h2 style="color:white;">Help & Support</h2>
-        
-        <div style="
-        background:white;
-        padding:15px;
-        border-radius:10px;
-        color:#999;
-        margin-top:20px;
-        margin-bottom:20px;">
-        Search help articles...
-        </div>
-        
-        <p>How do I set up a direct debit for rent?</p>
-        <p>What repairs is Yorkshire Housing responsible for?</p>
-        <p>How do I report a neighbour dispute?</p>
-        <p>What should I do if I have a leak?</p>
-        <p>How do I end my tenancy?</p>
-        
+        min-height:160px;">
+
+        <h3>🔧 Log a Repair</h3>
+
+        <p>Tell us about a problem with your home</p>
+
+        <b style="color:#D41468;">
+        Start →
+        </b>
+
         </div>
         """, unsafe_allow_html=True)
+
+    with c2:
+
+        st.markdown("""
+        <div style="
+        background:#E7ECFC;
+        padding:20px;
+        border-radius:20px;
+        min-height:160px;">
+
+        <h3>💳 Rent & Payments</h3>
+
+        <p>
+        View your balance, statements and payments
+        </p>
+
+        <b style="color:#3E4EB8;">
+        View →
+        </b>
+
+        </div>
+        """, unsafe_allow_html=True)
+
+    with c3:
+
+        st.markdown("""
+        <div style="
+        background:#F7F0D7;
+        padding:20px;
+        border-radius:20px;
+        min-height:160px;">
+
+        <h3>👤 My Details</h3>
+
+        <p>
+        Update your contact and personal information
+        </p>
+
+        <b style="color:#D59B00;">
+        View →
+        </b>
+
+        </div>
+        """, unsafe_allow_html=True)
+
+    with c4:
+
+        st.markdown("""
+        <div style="
+        background:#DDF2EE;
+        padding:20px;
+        border-radius:20px;
+        min-height:160px;">
+
+        <h3>📋 Submit a Case</h3>
+
+        <p>
+        Log a complaint, query or feedback
+        </p>
+
+        <b style="color:#008E7A;">
+        Start →
+        </b>
+
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.write("")
+
+    st.markdown("""
+    <div style="
+    background:#45105F;
+    padding:20px;
+    border-radius:20px;
+    color:white;
+    ">
+
+    <h2 style="color:white;">Help & Support</h2>
+
+    <div style="
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    color:#999;
+    margin-top:20px;
+    margin-bottom:20px;">
+    Search help articles...
+    </div>
+
+    <p>How do I set up a direct debit for rent?</p>
+    <p>What repairs is Yorkshire Housing responsible for?</p>
+    <p>How do I report a neighbour dispute?</p>
+    <p>What should I do if I have a leak?</p>
+    <p>How do I end my tenancy?</p>
+
+    </div>
+    """, unsafe_allow_html=True)
 
     with right_col:
 
