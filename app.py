@@ -1,5 +1,40 @@
 import streamlit as st
 
+st.set_page_config(
+    page_title="Customer Login History",
+    layout="wide"
+)
+st.markdown("""
+<style>
+
+.stApp {
+    background-color: #f3f1f5;
+}
+
+section[data-testid="stSidebar"] {
+    background-color: #46105d;
+}
+
+section[data-testid="stSidebar"] * {
+    color: white !important;
+}
+
+.yh-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #46105d;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 12px;
+    z-index: 999;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
 # ----------------------------------
 # FEATURE SWITCH
 # ----------------------------------
@@ -186,9 +221,7 @@ if SHOW_LOGIN_HISTORY_POC:
 
 else:
 
-    # ------------------------
-    # SIDEBAR
-    # ------------------------
+    # Sidebar
 
     st.sidebar.markdown("## 🏠 Yorkshire Housing")
     st.sidebar.markdown("Customer Portal")
@@ -212,115 +245,64 @@ else:
     st.sidebar.markdown("🔑 Reset Password")
     st.sidebar.markdown("🚪 Log Out")
 
-    # ------------------------
-    # MAIN LAYOUT
-    # ------------------------
+    # Layout
 
     main_col, right_col = st.columns([3, 1])
 
-    # ------------------------
-    # MAIN CONTENT
-    # ------------------------
-
     with main_col:
 
-        st.markdown(
-            """
-            <div style="
-                background:#45105F;
-                padding:30px;
-                border-radius:20px;
-                color:white;">
-            """,
-            unsafe_allow_html=True,
-        )
-        
-        st.markdown(
-            "<span style='color:#FF5E8A;font-weight:bold;'>GOOD MORNING</span>",
-            unsafe_allow_html=True
-        )
-        
-        st.title("Welcome back, Prem.")
-        
-        st.write(
-            "Here's what's happening with your home at 15 Test Close, Testgate."
-        )
-        
+        # Hero
+
+        st.markdown("""
+        <div style="
+            background:#45105F;
+            color:white;
+            padding:30px;
+            border-radius:20px;">
+            <h4 style="color:#FF5E8A;">GOOD MORNING</h4>
+            <h1>Welcome back, Prem.</h1>
+            <p>Here's what's happening with your home at 15 Test Close, Testgate.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
         st.warning(
             "⚠️ Your rent is overdue. Please pay £47.50 as soon as possible."
-        )
-        
-        st.markdown(
-            "</div>",
-            unsafe_allow_html=True
         )
 
         st.write("")
 
-        # Quick Actions
-
         c1, c2, c3, c4 = st.columns(4)
 
         with c1:
-            st.markdown("""
-            <div class="quick-repair">
-                <h3>🔧 Log a Repair</h3>
-                <p>Tell us about a problem with your home</p>
-                <b>Start →</b>
-            </div>
-            """,
-            unsafe_allow_html=True)
+            st.info("🔧 Log a Repair")
 
         with c2:
-            with st.container(border=True):
-                st.markdown("### 💳")
-                st.subheader("Rent & Payments")
-                st.write("View balance and payment information")
-                st.link_button("View →", "#")
+            st.info("💳 Rent & Payments")
 
         with c3:
-            with st.container(border=True):
-                st.markdown("### 👤")
-                st.subheader("My Details")
-                st.write("Manage your contact information")
-                st.link_button("View →", "#")
+            st.info("👤 My Details")
 
         with c4:
-            with st.container(border=True):
-                st.markdown("### 📋")
-                st.subheader("Submit a Case")
-                st.write("Complaints, queries and feedback")
-                st.link_button("Start →", "#")
+            st.info("📋 Submit a Case")
 
-st.write("")
+        st.write("")
 
-st.markdown("""
-<div style="
-background:#45105F;
-padding:25px;
-border-radius:20px;
-color:white;
-">
-<h2>Help & Support</h2>
-</div>
-""", unsafe_allow_html=True)
+        with st.container(border=True):
 
-st.text_input(
-    "",
-    placeholder="Search help articles..."
-)
+            st.subheader("Help & Support")
 
-st.markdown("##### POPULAR SEARCHES")
+            st.text_input(
+                "",
+                placeholder="Search help articles..."
+            )
 
-st.write("• How do I set up a direct debit for rent?")
-st.write("• What repairs is Yorkshire Housing responsible for?")
-st.write("• How do I report a neighbour dispute?")
-st.write("• What should I do if I have a leak?")
-st.write("• How do I end my tenancy?")
+            st.markdown("##### POPULAR SEARCHES")
 
-    # ------------------------
-    # RIGHT COLUMN
-    # ------------------------
+            st.write("• How do I set up a direct debit for rent?")
+            st.write("• What repairs is Yorkshire Housing responsible for?")
+            st.write("• How do I report a neighbour dispute?")
+            st.write("• What should I do if I have a leak?")
+            st.write("• How do I end my tenancy?")
 
     with right_col:
 
@@ -344,41 +326,11 @@ st.write("• How do I end my tenancy?")
 
             st.subheader("My Open Cases")
 
-            st.info("Repair Case #24-8312 - Leaking kitchen tap")
+            st.info("Repair Case #24-8312")
 
-            st.info(
-                "Complaint Case #24-7901 - Noise from neighbouring property"
-            )
-
-            st.button(
-                "View All Cases",
-                use_container_width=True
-            )
-
-    # ------------------------
-    # FOOTER
-    # ------------------------
+            st.info("Complaint Case #24-7901")
 
     st.markdown("""
-    <style>
-    .yh-footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: #46105d;
-        color: white;
-        text-align: center;
-        padding: 12px;
-        font-size: 12px;
-        z-index: 999;
-    }
-    
-    .stApp {
-        padding-bottom: 60px;
-    }
-    </style>
-    
     <div class="yh-footer">
         © 2026 Yorkshire Housing. All Rights Reserved.
     </div>
