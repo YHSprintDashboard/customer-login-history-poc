@@ -250,19 +250,6 @@ else:
     main_col, right_col = st.columns([3, 1])
 
     with main_col:
-
-        st.markdown("""
-        <style>
-        .hero-box{
-            background:#45105F;
-            border-radius:24px;
-            padding:30px;
-            margin-bottom:20px;
-        }
-        </style>
-        """, unsafe_allow_html=True)
-    
-        st.markdown('<div class="hero-box">', unsafe_allow_html=True)
     
         hero_left, hero_right = st.columns([2, 1])
     
@@ -324,8 +311,6 @@ else:
             )
     
             st.markdown("</div>", unsafe_allow_html=True)
-    
-        st.markdown("</div>", unsafe_allow_html=True)
     
         st.write("")
         c1, c2, c3, c4 = st.columns(4)
