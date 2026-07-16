@@ -44,6 +44,16 @@ SHOW_LOGIN_HISTORY_POC = False
 st.markdown("""
 <style>
 
+/* Main Hero */
+div[data-testid="stVerticalBlockBorderWrapper"] {
+    border-radius: 20px !important;
+}
+
+/* Right hand cards */
+div[data-testid="stVerticalBlockBorderWrapper"] {
+    background: white;
+}
+
 /* Main page */
 .stApp {
     background-color: #f3f1f5;
@@ -252,6 +262,13 @@ main_col, right_col = st.columns([3, 1])
 with main_col:
 
     with st.container(border=True):
+        st.markdown("""
+        <div style="
+        background:#45105F;
+        padding:20px;
+        border-radius:20px;
+        color:white;">
+        """, unsafe_allow_html=True)
 
         hero_left, hero_right = st.columns([2, 1])
 
@@ -303,6 +320,7 @@ with main_col:
                 "View Statements",
                 use_container_width=True
             )
+            st.markdown("</div>", unsafe_allow_html=True)
 
     st.write("")
 
