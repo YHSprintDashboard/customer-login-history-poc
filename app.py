@@ -51,7 +51,7 @@ div[data-testid="stVerticalBlockBorderWrapper"] {
 
 /* Right hand cards */
 div[data-testid="stVerticalBlockBorderWrapper"] {
-    background: white;
+    background: transparent;
 }
 
 /* Main page */
