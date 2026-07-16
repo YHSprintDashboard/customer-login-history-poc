@@ -51,7 +51,7 @@ div[data-testid="stVerticalBlockBorderWrapper"] {
 
 /* Right hand cards */
 div[data-testid="stVerticalBlockBorderWrapper"] {
-    background: transparent;
+    background: white;
 }
 
 /* Main page */
@@ -260,110 +260,63 @@ else:
     main_col, right_col = st.columns([3, 1])
     
     with main_col:
-
-        st.markdown("""
-        <div style="
-            background:#45105F;
-            border-radius:20px;
-            padding:30px;
-            color:white;
-            margin-bottom:20px;">
     
-            <div style="display:flex; gap:40px;">
+        with st.container(border=True):
+            
     
-                <div style="flex:2;">
+            hero_left, hero_right = st.columns([2, 1])
     
-                    <div style="
-                        color:#FF5E8A;
-                        font-size:20px;
-                        font-weight:bold;">
-                        GOOD MORNING
-                    </div>
+            with hero_left:
     
-                    <h1 style="
-                        color:white;
-                        margin-top:25px;">
-                        Welcome back, Prem.
-                    </h1>
+                st.markdown(
+                    "<span style='color:#FF5E8A;font-size:20px;font-weight:bold;'>GOOD MORNING</span>",
+                    unsafe_allow_html=True
+                )
     
-                    <p style="
-                        color:#D6C6E2;
-                        font-size:18px;">
-                        Here's what's happening with your home at 15 Test Close, Testgate.
-                    </p>
+                st.markdown("## Welcome back, Prem.")
     
-                    <div style="
-                        background:#6A214B;
-                        border:1px solid #A24570;
-                        padding:15px;
-                        border-radius:12px;
-                        margin-top:20px;
-                        color:white;">
-                        ⚠️ Your rent is overdue. Please pay £47.50 as soon as possible.
-                    </div>
+                st.write(
+                    "Here's what's happening with your home at 15 Test Close, Testgate."
+                )
     
-                </div>
+                st.warning(
+                    "⚠️ Your rent is overdue. Please pay £47.50 as soon as possible."
+                )
     
-                <div style="flex:1;">
+            with hero_right:
     
-                    <div style="color:#CDB7D9;font-size:12px;">
-                        CURRENT BALANCE
-                    </div>
+                st.caption("CURRENT BALANCE")
     
-                    <div style="
-                        color:#FF7373;
-                        font-size:56px;
-                        font-weight:bold;">
-                        -£47.50
-                    </div>
+                st.markdown(
+                    "<h1 style='color:#FF7373;'>-£47.50</h1>",
+                    unsafe_allow_html=True
+                )
     
-                    <div style="color:#D6C6E2;">
-                        Your rent is overdue
-                    </div>
+                st.write("Your rent is overdue")
     
-                    <hr style="border-color:#6A3A82;">
+                st.divider()
     
-                    <div style="color:#CDB7D9;font-size:12px;">
-                        NEXT PAYMENT
-                    </div>
+                st.caption("NEXT PAYMENT")
+                st.write("1 October 2026")
     
-                    <div style="color:white;">
-                        1 October 2026
-                    </div>
+                st.divider()
     
-                    <hr style="border-color:#6A3A82;">
+                st.caption("WEEKLY RENT")
+                st.write("£118.00")
     
-                    <div style="color:#CDB7D9;font-size:12px;">
-                        WEEKLY RENT
-                    </div>
+                st.button(
+                    "Make a Payment",
+                    type="primary",
+                    use_container_width=True
+                )
     
-                    <div style="color:white;">
-                        £118.00
-                    </div>
-    
-                </div>
-    
-            </div>
-    
-        </div>
-        """, unsafe_allow_html=True)
+                st.button(
+                    "View Statements",
+                    use_container_width=True
+                )
+                
     
         st.write("")
-
-        payment_col1, payment_col2 = st.columns([1, 1])
-
-        with payment_col1:
-            st.button(
-                "Make a Payment",
-                type="primary",
-                use_container_width=True
-            )
-        
-        with payment_col2:
-            st.button(
-                "View Statements",
-                use_container_width=True
-            )
     
         c1, c2, c3, c4 = st.columns(4)
     
