@@ -187,15 +187,24 @@ else:
         st.warning(
             "⚠️ Your rent is overdue. Please pay £47.50 as soon as possible."
         )
-st.markdown("---")
-
 st.markdown(
     """
-    <div style="
-        text-align:center;
-        color:#666;
-        padding:20px;
-        font-size:12px;">
+    <style>
+    .yh-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #46105d;
+        color: white;
+        text-align: center;
+        padding: 12px;
+        font-size: 12px;
+        z-index: 999;
+    }
+    </style>
+
+    <div class="yh-footer">
         © 2026 Yorkshire Housing. All Rights Reserved.
     </div>
     """,
