@@ -318,9 +318,40 @@ else:
 
     with right_col:
 
-        with st.container(border=True):
-
-            st.subheader("Get in Touch")
+        st.markdown("""
+        <div style="
+        background:white;
+        padding:20px;
+        border-radius:20px;
+        border:1px solid #E5E5E5;
+        ">
+        
+        <h3>Get in Touch</h3>
+        
+        <div style="
+        background:#45105F;
+        color:white;
+        padding:15px;
+        text-align:center;
+        border-radius:12px;
+        margin-bottom:15px;
+        font-weight:bold;">
+        💬 Ask a Question
+        </div>
+        
+        <div style="
+        background:white;
+        color:#D41468;
+        padding:15px;
+        text-align:center;
+        border-radius:12px;
+        border:2px solid #F3A1BA;
+        font-weight:bold;">
+        🚨 Emergency Repair
+        </div>
+        
+        </div>
+        """, unsafe_allow_html=True)
 
             st.button(
                 "💬 Ask a Question",
