@@ -174,8 +174,17 @@ else:
     st.sidebar.markdown("🏡 My Home")
     st.sidebar.markdown("💬 Get in Touch")
 
-    st.title("Welcome back, Prem.")
+    with st.container(border=True):
 
-    st.write(
-        "Here's what's happening with your home at 15 Test Street, Test County."
-    )
+        st.markdown("##### GOOD MORNING")
+    
+        st.title("Welcome back, Sarah.")
+    
+        st.write(
+            "Here's what's happening with your home at 14 Maple Close, Harrogate."
+        )
+    
+        st.warning(
+            "⚠️ Your rent is overdue. Please pay £47.50 as soon as possible."
+        )
+
