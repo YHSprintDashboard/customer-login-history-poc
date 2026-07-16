@@ -4,7 +4,7 @@ import streamlit as st
 # FEATURE SWITCH
 # ----------------------------------
 
-SHOW_LOGIN_HISTORY_POC = True
+SHOW_LOGIN_HISTORY_POC = False
 
 st.set_page_config(
     page_title="Customer Login History",
