@@ -257,174 +257,156 @@ else:
 
     # Layout
 
-    main_col, right_col = st.columns([3, 1])
-    with main_col:
+main_col, right_col = st.columns([3, 1])
+
+with main_col:
+
+    left_col, balance_col = st.columns([2, 1])
+
+    with left_col:
+
         st.markdown("""
         <div style="
         background:#4B1365;
-        border-radius:24px;
         padding:40px;
-        display:flex;
-        justify-content:space-between;
-        gap:40px;
-        margin-bottom:30px;
-        ">
-        
-            <!-- LEFT -->
-        
-            <div style="flex:2;">
-        
-                <div style="
-                color:#FF5A8C;
-                font-size:16px;
-                font-weight:700;
-                letter-spacing:2px;
-                margin-bottom:20px;">
-                GOOD MORNING
-                </div>
-        
-                <div style="
-                color:white;
-                font-size:54px;
-                font-weight:700;
-                margin-bottom:15px;">
-                Welcome back, Prem.
-                </div>
-        
-                <div style="
-                color:#CBB7D8;
-                font-size:20px;
-                margin-bottom:30px;">
-                Here's what's happening with your home at
-                <strong>15 Test Close, Testgate.</strong>
-                </div>
-        
-                <div style="
-                background:#692147;
-                border:1px solid #A93A73;
-                border-radius:16px;
-                padding:18px 22px;
-                display:flex;
-                justify-content:space-between;
-                align-items:center;">
-        
-                    <div style="
-                    color:white;
-                    font-size:18px;">
-                    ⚠️ <strong>Your rent is overdue.</strong>
-                    Please pay £47.50 as soon as possible.
-                    </div>
-        
-                    <div style="
-                    background:#D41468;
-                    color:white;
-                    padding:14px 28px;
-                    border-radius:12px;
-                    font-weight:700;
-                    white-space:nowrap;">
-                    Make a payment
-                    </div>
-        
-                </div>
-        
-            </div>
-        
-            <!-- RIGHT -->
-        
+        border-radius:24px;
+        min-height:460px;">
+
             <div style="
-            flex:1;
-            background:#66337E;
-            border-radius:18px;
-            padding:28px;">
-        
-                <div style="
-                color:#D3BDD9;
-                font-size:13px;
-                letter-spacing:2px;">
-                CURRENT BALANCE
-                </div>
-        
-                <div style="
-                color:#FF7A7A;
-                font-size:64px;
-                font-weight:700;
-                margin:10px 0;">
-                -£47.50
-                </div>
-        
-                <div style="
-                color:#D3BDD9;
-                margin-bottom:24px;">
-                Your rent is overdue
-                </div>
-        
-                <div style="
-                background:#76468C;
-                border-radius:12px;
-                padding:16px;
-                margin-bottom:16px;">
-        
-                    <div style="
-                    color:#D3BDD9;
-                    font-size:12px;">
-                    NEXT PAYMENT
-                    </div>
-        
-                    <div style="
-                    color:white;
-                    font-size:18px;
-                    font-weight:700;
-                    margin-top:8px;">
-                    1 October 2026
-                    </div>
-        
-                </div>
-        
-                <div style="
-                background:#76468C;
-                border-radius:12px;
-                padding:16px;
-                margin-bottom:20px;">
-        
-                    <div style="
-                    color:#D3BDD9;
-                    font-size:12px;">
-                    WEEKLY RENT
-                    </div>
-        
-                    <div style="
-                    color:white;
-                    font-size:18px;
-                    font-weight:700;
-                    margin-top:8px;">
-                    £118.00
-                    </div>
-        
-                </div>
-        
-                <div style="
-                background:#D41468;
-                color:white;
-                text-align:center;
-                padding:15px;
-                border-radius:12px;
-                font-weight:700;
-                margin-bottom:12px;">
-                Make a Payment
-                </div>
-        
-                <div style="
-                border:1px solid #A98CB8;
-                color:white;
-                text-align:center;
-                padding:15px;
-                border-radius:12px;
-                font-weight:700;">
-                View Statements
-                </div>
-        
+            color:#FF5A8C;
+            font-size:18px;
+            font-weight:700;
+            letter-spacing:2px;">
+            GOOD MORNING
             </div>
-        
+
+            <div style="
+            color:white;
+            font-size:32px;
+            font-weight:700;
+            margin-top:18px;">
+            Welcome back, Prem.
+            </div>
+
+            <div style="
+            color:#CBB7D8;
+            font-size:18px;
+            margin-top:12px;">
+            Here's what's happening with your home at
+            <strong>15 Test Close, Testgate.</strong>
+            </div>
+
+            <div style="
+            margin-top:25px;
+            background:#692147;
+            border:1px solid #A93A73;
+            padding:18px;
+            border-radius:16px;
+            color:white;">
+
+                <strong>⚠️ Your rent is overdue.</strong>
+                Please pay £47.50 as soon as possible.
+
+            </div>
+
+        </div>
+        """, unsafe_allow_html=True)
+
+    with balance_col:
+
+        st.markdown("""
+        <div style="
+        background:#66337E;
+        padding:25px;
+        border-radius:20px;
+        min-height:460px;">
+
+            <div style="
+            color:#D3BDD9;
+            font-size:12px;
+            letter-spacing:2px;">
+            CURRENT BALANCE
+            </div>
+
+            <div style="
+            color:#FF7A7A;
+            font-size:56px;
+            font-weight:bold;
+            margin-top:10px;">
+            -£47.50
+            </div>
+
+            <div style="
+            color:#D3BDD9;
+            margin-bottom:20px;">
+            Your rent is overdue
+            </div>
+
+            <div style="
+            background:#76468C;
+            border-radius:12px;
+            padding:15px;
+            margin-bottom:15px;">
+
+                <div style="
+                color:#D3BDD9;
+                font-size:11px;">
+                NEXT PAYMENT
+                </div>
+
+                <div style="
+                color:white;
+                font-size:20px;
+                font-weight:bold;
+                margin-top:8px;">
+                1 October 2026
+                </div>
+
+            </div>
+
+            <div style="
+            background:#76468C;
+            border-radius:12px;
+            padding:15px;
+            margin-bottom:20px;">
+
+                <div style="
+                color:#D3BDD9;
+                font-size:11px;">
+                WEEKLY RENT
+                </div>
+
+                <div style="
+                color:white;
+                font-size:20px;
+                font-weight:bold;
+                margin-top:8px;">
+                £118.00
+                </div>
+
+            </div>
+
+            <div style="
+            background:#D41468;
+            color:white;
+            text-align:center;
+            padding:14px;
+            border-radius:12px;
+            font-weight:bold;
+            margin-bottom:10px;">
+            Make a Payment
+            </div>
+
+            <div style="
+            border:1px solid #A98CB8;
+            color:white;
+            text-align:center;
+            padding:14px;
+            border-radius:12px;
+            font-weight:bold;">
+            View Statements
+            </div>
+
         </div>
         """, unsafe_allow_html=True)
     
