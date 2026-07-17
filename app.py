@@ -257,6 +257,8 @@ else:
 
     # Layout
 
+    main_col, right_col = st.columns([3, 1])
+    with main_col:
         st.markdown("""
         <div style="
         background:#4B1365;
