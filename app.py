@@ -31,6 +31,11 @@ section[data-testid="stSidebar"] * {
     font-size: 12px;
     z-index: 999;
 }
+/* TEST HERO BACKGROUND */
+div[data-testid="stVerticalBlockBorderWrapper"] {
+    background-color: #45105F !important;
+}
+
 
 </style>
 """, unsafe_allow_html=True)
