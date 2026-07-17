@@ -32,10 +32,10 @@ section[data-testid="stSidebar"] * {
     z-index: 999;
 }
 /* TEST HERO BACKGROUND */
-div[data-testid="stVerticalBlockBorderWrapper"] {
-    background-color: #45105F !important;
-}
 
+div[data-testid="stVerticalBlock"] {
+    background: #45105F !important;
+}
 
 </style>
 """, unsafe_allow_html=True)
