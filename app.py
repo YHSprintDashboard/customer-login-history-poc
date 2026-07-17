@@ -31,11 +31,6 @@ section[data-testid="stSidebar"] * {
     font-size: 12px;
     z-index: 999;
 }
-/* TEST HERO BACKGROUND */
-
-div[data-testid="stVerticalBlock"] {
-    background: #45105F !important;
-}
 
 </style>
 """, unsafe_allow_html=True)
@@ -100,6 +95,10 @@ section[data-testid="stSidebar"] * {
 /* Cards */
 div[data-testid="stVerticalBlockBorderWrapper"] {
     border-radius: 18px !important;
+}
+.hero-section div[data-testid="stVerticalBlock"] {
+    background-color: #45105F !important;
+    border-radius: 20px !important;
 }
 
 </style>
@@ -265,6 +264,7 @@ else:
     main_col, right_col = st.columns([3, 1])
     
     with main_col:
+        st.markdown('<div class="hero-section">', unsafe_allow_html=True)
     
         with st.container(border=True):
             
@@ -322,6 +322,7 @@ else:
                 
     
         st.write("")
+        st.markdown('</div>', unsafe_allow_html=True)
     
         c1, c2, c3, c4 = st.columns(4)
     
